@@ -1,0 +1,78 @@
+.portfolio-tools{
+    border-top: $grey 2px solid;
+    border-bottom: $grey 2px solid;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    margin-bottom: 80px;
+
+    @include breakpoint(tablet) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: baseline;
+        border-bottom: none;
+    }
+
+    @include breakpoint(desktop) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: baseline;
+        border-bottom: none;
+        padding-top: 72px;
+    }
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -60px;
+        left: 50%;
+        width: 530px;
+        height: 129px;
+        background-image: url('img/ellipse.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include breakpoint(tablet) {
+            bottom: 0;
+            left: 80%;
+        }
+
+        @include breakpoint(desktop) {
+            bottom: 10%;
+            left: 90%;
+        }
+    }
+
+    &-tool{
+        padding-bottom: 24px;
+
+        @include breakpoint(desktop) {
+            padding-bottom: 58px;
+        }
+
+        &:last-child{
+            padding: 0;
+        }
+
+        & h3 {
+            font-size: 32px;
+            line-height: 40px;
+            word-spacing: -1px;
+
+            @include breakpoint(tablet) {
+                @include heading-L;
+                text-align: start
+            }
+        }
+
+        & p {
+            @include font-body-S;
+
+            @include breakpoint(tablet) {
+                @include font-body;
+                text-align: start;
+            }
+        }
+    }
+}

@@ -1,0 +1,161 @@
+.portfolio-hero{
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(tablet) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        position: relative;
+    }
+
+    &-images{
+        height: 260px;
+        position: relative;
+
+        @include breakpoint(tablet) {
+            order: 2;
+        }
+
+        &-container {
+            position: relative;
+
+            &-principal{
+
+                & img{
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 0;
+                    width: 174px;
+                    background-color: rgba(151, 151, 151, 0.1);
+
+                    @include breakpoint(tablet) {
+                        right: 0;
+                        top: -190px;
+                        width: 322px;
+                        max-height: 486px;
+                        background-color: transparent;
+                    }
+
+                    @include breakpoint(desktop) {
+                        transform: translateX(-55%);
+                        top: -290px;
+                        width: 445px;
+                        max-height: 720px;
+                        background-color: transparent;
+                    }
+                }
+            }
+
+            &-ellipse{
+
+                & img{
+                    position: absolute;
+                    right: 50%;
+
+                    @include breakpoint(tablet) {
+                        transform: translateX(-100%);
+                        right: 80%;
+                        bottom: 110px;
+                    }
+                }
+            }
+
+            &-oval{
+                position: relative;
+
+                & img{
+                    position: absolute;
+                    transform: translateX(90%);
+                    top: 110px;
+                    max-width: 129px;
+
+                    @include breakpoint(tablet) {
+                        right: 100px;
+                        bottom: 10%;
+                    }
+                }
+            }
+        }        
+    }
+
+    &-content{
+
+        @include breakpoint(tablet) {
+            order: 1;
+            width: 445px;
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            background-color: transparent;
+            z-index: 10;
+
+            @include breakpoint(desktop) {
+                width: 710px;
+            }
+        }
+
+        &-title{
+            font-size: 40px;
+            text-align: center;
+            padding: 20px 0;
+
+            @include breakpoint(tablet) {
+                text-align: left;
+                font-size: 72px;
+                letter-spacing: -2.05px;
+                margin-bottom: 40px;
+            }
+
+            @include breakpoint(desktop) {
+                @include heading-XL;
+            }
+
+            & .break::before{
+                content: '\A';
+                white-space: pre;
+
+                @include breakpoint(desktop) {
+                    content: "";
+                }
+            }
+
+            & .active{
+                text-decoration: underline;
+                text-decoration-color: $green;
+
+                @include breakpoint(tablet) {
+                    text-underline-offset:14px;
+                }
+            }
+        }
+
+        &-text{
+            font-size: 16px;
+            line-height: 26px;
+            color: $grey;
+            text-align: center;
+
+            @include breakpoint(tablet) {
+                text-align: left;
+                @include font-body;
+            }
+
+            @include breakpoint(desktop) {
+                max-width: 445px;
+            }
+        }
+            
+        &-button{
+            justify-self: center;
+            padding-top: 66px;
+            margin-bottom: 80px;
+
+            @include breakpoint(desktop) {
+                margin-bottom: 220px;
+            }
+        }
+    } 
+}
+

@@ -1,0 +1,83 @@
+.portfolio-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+        padding-top: 30px;
+        margin-bottom: 90px;
+
+        @include breakpoint(desktop) {
+            margin-bottom: 127px;
+        }
+
+        &::after{
+            content: "";
+            width: 322px;
+            height: 600px;
+            background-color: rgba(151, 151, 151, 0.1);
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            @include breakpoint(desktop) {
+                right: 165px;
+                width: 445px;
+                height: 720px;
+                margin-bottom: 127px;
+            }
+        }
+    }
+
+    &-logo{
+        padding: 10px 0 20px;
+
+        @include breakpoint(tablet) {
+            padding: 0;
+        }
+        
+        & a{
+            @include heading-M;
+            text-decoration: none;
+
+            @include breakpoint(tablet) {
+                font-size: 32px;
+            }
+        }    
+    }
+
+    &-icons{
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 60px;
+
+        @include breakpoint(tablet) {
+            margin: 0;
+            gap: 32px;
+        }
+
+        @include breakpoint(desktop) {
+            padding-right: 29px;
+        }
+
+        &-icon{
+            width: 20px;
+
+            @include breakpoint(tablet) {
+                width: 24px;
+            }
+        }
+            
+        & li{
+            list-style: none;
+        }
+
+        & a{
+            text-decoration: none;
+        }
+    }
+}

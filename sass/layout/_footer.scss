@@ -1,0 +1,49 @@
+.portfolio-footer{
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: $grey 2px solid;
+
+    @include breakpoint(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    @include breakpoint(desktop) {
+        padding: 47px 0;
+    }
+    
+    &-logo{
+        margin-bottom: 20px;
+
+        & a{
+            text-decoration: none;
+            font-size: 24px;
+            line-height: 32px;
+            letter-spacing: -0.33px;
+
+            @include breakpoint(tablet) {
+                font-size: 32px;
+                letter-spacing: -0.44px;
+            }
+        }
+    }
+
+    &-icons ul{
+        display: flex;
+        gap: 25.6px;
+
+        & li{
+            list-style: none;
+        }
+
+        & img{
+            width: 19px;
+
+            @include breakpoint(tablet) {
+                width: 24px;
+            }
+        }
+    }
+}

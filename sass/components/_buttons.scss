@@ -1,0 +1,13 @@
+.button{
+    @include font-body-S;
+    color: $white;
+    text-decoration: underline;
+    text-decoration-color: $green;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+    letter-spacing: 2.2px;
+
+    &:hover{
+        color: $green;
+    }
+}

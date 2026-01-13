@@ -1,0 +1,169 @@
+.portfolio-contact{
+    padding-top: 40px;
+    text-align: center;
+
+    @include breakpoint(tablet) {
+        max-width: 445px;
+        justify-self: center;
+    }
+
+    @include breakpoint(desktop) {
+        max-width: 100%;
+        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        text-align: start;
+        padding-top: 100px;
+        column-gap: 220px;
+    }
+
+    & h2{
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: -1.14px;
+        margin-bottom: 20px;
+
+        @include breakpoint(tablet) {
+            font-size: 72px;
+            line-height: 72px;
+            letter-spacing: -2.05px;
+        }
+
+        @include breakpoint(desktop) {
+            @include heading-XL;
+            grid-column: 1/span 1;
+            margin: 0
+        }
+    }
+
+    & p{
+        @include font-body-S;
+        margin-bottom: 50px;
+        
+        @include breakpoint(tablet) {
+            @include font-body;
+        }
+
+        @include breakpoint(desktop) {
+            grid-column: 1/span 1;
+            grid-row: 2/span 1;
+            max-width: 445px;
+        }
+    }
+    
+    & form{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        position: relative;
+
+        & .error {
+            color: #FF6F5B;
+            font-size: 12px;
+            line-height: 16px;
+            display: none;  
+            position: relative;
+        }
+
+
+        @include breakpoint(desktop) {
+            grid-column: 2/span 1;
+            grid-row: 1/span 2;
+            max-width: 445px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 50%;
+            top: 75%;
+            width: 530px;
+            height: 129px;
+            background-image: url('img/ellipse.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+
+            @include breakpoint(tablet) {
+                right: 100%;
+                top: 100%;
+            }
+
+            @include breakpoint(desktop) {
+                right: 200%;
+                top: 90%;
+            }
+        }
+
+        & label{
+            @include font-body-S;
+            letter-spacing: -0.22px;            
+            opacity: 50%;
+            padding-top: 32px;            
+        }
+
+        & input{
+            @include font-body-S;
+            color: $white;
+            background-color: transparent;
+            border-bottom: $grey 2px solid;
+            
+            &:focus, & :invalid:focus{
+                outline: none;
+                border-bottom: 2px solid $green;
+            }
+
+            &:invalid:not(:focus):not(:placeholder-shown) {
+                border-bottom: 2px solid #FF6F5B;
+
+                & + .error {
+                    display: block;
+                    align-self: flex-end;
+
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        bottom: 30px;
+                        right: 0;
+                        background-image: url('img/invalid-icon.svg');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+
+        & textarea{
+            background-color: transparent;
+            border-bottom: $grey 2px solid;
+            height: 100px;
+
+            &:focus{
+                outline: none;
+                border-bottom: 2px solid $green
+            }
+        }
+    }
+
+    &-button{
+        display: flex;
+        justify-content: end;
+        padding-top: 32px;
+        padding-bottom: 87px;
+
+        @include breakpoint(tablet) {
+            margin-bottom: 5px;
+        }
+
+        @include breakpoint(desktop) {
+            grid-column: 1/span 2;
+            grid-row: 3/span 1;
+        }
+
+        & button{
+            background-color: transparent;
+        }
+    }
+}

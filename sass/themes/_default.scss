@@ -1,0 +1,39 @@
+html * {
+    font-family: $primary-font;
+}
+
+.portfolio{
+    background-color: $black;
+    color: $white;
+}
+
+.container {
+    overflow-x: hidden;
+    padding: 0 16px;
+
+    @include breakpoint(tablet) {
+        padding: 0 32px;
+    }
+
+    @include breakpoint(desktop) {
+        padding: 0 165px;
+    }
+}
+
+.container-secondary {
+    background-color: rgba(151, 151, 151, 0.1);
+    overflow-x: hidden;
+    padding: 0 16px;
+
+    @include breakpoint(tablet) {
+        padding: 0 32px;
+    }
+
+    @include breakpoint(desktop) {
+        padding: 0 165px;
+    }
+}
+
+input:invalid {
+    display: inline;
+}

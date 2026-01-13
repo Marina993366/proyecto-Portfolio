@@ -1,0 +1,54 @@
+$breakpoints: (
+  tablet: 768px,
+  tablet-horizontal: 1024px,
+  desktop: 1200px,
+  desktop-xl: 1440px
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin heading-XL($weight: 700) {
+  font-family: $primary-font;
+  font-weight: $weight;
+  color: $white;
+  font-size: 88px;
+  line-height: 88px;
+  letter-spacing: -2.5px;
+}
+
+@mixin heading-L($weight: 700) {
+  font-family: $primary-font;
+  font-weight: $weight;
+  color: $white;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -1.5px;
+}
+
+@mixin heading-M($weight: 700) {
+  font-family: $primary-font;
+  font-weight: $weight;
+  color: $white;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin font-body($weight: 500) {
+  font-family: $primary-font;
+  font-weight: $weight;
+  color: $grey;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@mixin font-body-S($weight: 500) {
+  font-family: $primary-font;
+  font-weight: $weight;
+  color: $grey;
+  font-size: 16px;
+  line-height: 26px;
+}
